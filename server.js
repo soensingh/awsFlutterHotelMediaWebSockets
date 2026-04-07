@@ -35,10 +35,12 @@ import { fileURLToPath }     from 'url';
 
 // ── Config ────────────────────────────────────────────────────────────────────
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+import { existsSync } from 'fs';
+
 // Load .env from own directory first (production), fall back to sibling hotelmedia/ (local dev)
-const localEnv  = path.join(__dirname, '.env');
+const localEnv   = path.join(__dirname, '.env');
 const siblingEnv = path.join(__dirname, '../hotelmedia/.env');
-dotenv.config({ path: require('fs').existsSync(localEnv) ? localEnv : siblingEnv });
+dotenv.config({ path: existsSync(localEnv) ? localEnv : siblingEnv });
 
 const {
   JWT_SECRET_MOBILE:  JWT_SECRET,
