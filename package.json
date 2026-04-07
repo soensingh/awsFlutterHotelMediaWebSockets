@@ -1,0 +1,17 @@
+{
+  "name": "hotel-ws-server",
+  "version": "1.0.0",
+  "description": "Production WebSocket server for Hotel Media real-time messaging",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^9.3.1",
+    "ws": "^8.18.0"
+  }
+}
